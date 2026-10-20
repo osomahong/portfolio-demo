@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김하늘 | 일러스트레이터</title>
+  <meta name="description" content="프리랜서 일러스트레이터 김하늘의 소개, 대표 작업과 연락처입니다.">
+  <style>
+    :root {
+      --bg: #fbf8f3;
+      --surface: #ffffff;
+      --text: #2b2724;
+      --muted: #6f6760;
+      --line: #e7e0d6;
+      --accent: #d9633b;
+      --accent-soft: #f6e4da;
+      --radius: 16px;
+      --max: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      word-break: keep-all;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 상단 메뉴 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251, 248, 243, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .nav ul {
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 15px;
+    }
+
+    .nav ul a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav ul a:hover { color: var(--text); }
+
+    /* 첫 화면 */
+    .hero {
+      padding: 96px 0 72px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      margin: 0 0 20px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p.lead {
+      max-width: 560px;
+      margin: 0 0 32px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: var(--text);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--accent); }
+
+    /* 공통 섹션 */
+    section { padding: 72px 0; }
+
+    section + section { border-top: 1px solid var(--line); }
+
+    .section-label {
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    h2 {
+      margin: 0 0 32px;
+      font-size: clamp(26px, 4vw, 34px);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    /* 소개 */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about p { margin: 0 0 16px; }
+
+    .facts {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .facts li {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .facts li:first-child { border-top: 1px solid var(--line); }
+
+    .facts .k {
+      flex: 0 0 72px;
+      color: var(--muted);
+    }
+
+    /* 대표 작업 */
+    .works {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .work {
+      margin: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .work svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+    }
+
+    .work figcaption { padding: 20px 22px 24px; }
+
+    .work .meta {
+      margin: 0 0 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .work h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      letter-spacing: -0.01em;
+    }
+
+    .work p.desc {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* 연락처 */
+    .contact-intro {
+      max-width: 560px;
+      margin: -12px 0 32px;
+      color: var(--muted);
+    }
+
+    .contacts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contacts a {
+      display: block;
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .contacts a:hover { border-color: var(--accent); }
+
+    .contacts .k {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contacts .v {
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 32px 0 48px;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* 태블릿 */
+    @media (max-width: 860px) {
+      .works { grid-template-columns: repeat(2, 1fr); }
+      .about { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* 휴대폰 */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .wrap { padding: 0 20px; }
+      .nav { height: 56px; }
+      .nav ul { gap: 16px; font-size: 14px; }
+      .hero { padding: 56px 0 48px; }
+      .hero p.lead { font-size: 17px; }
+      .btn { display: block; text-align: center; }
+      section { padding: 56px 0; }
+      h2 { margin-bottom: 24px; }
+      .works, .contacts { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="wrap nav" aria-label="주요 메뉴">
+      <a class="logo" href="#top">김하늘</a>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#works">작업</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <p class="eyebrow">FREELANCE ILLUSTRATOR</p>
+      <h1>일상의 온도를<br>그림으로 옮기는<br>김하늘입니다</h1>
+      <p class="lead">그림책, 출판 표지, 브랜드 일러스트를 그립니다. 이야기의 분위기를 먼저 듣고, 그 장면에 맞는 색과 선을 찾습니다.</p>
+      <a class="btn" href="#contact">작업 문의하기</a>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <p class="section-label">ABOUT</p>
+        <h2>소개</h2>
+        <div class="about">
+          <ul class="facts">
+            <li><span class="k">활동</span><span>2018년부터 프리랜서</span></li>
+            <li><span class="k">분야</span><span>그림책, 표지, 브랜드, 에디토리얼</span></li>
+            <li><span class="k">도구</span><span>Procreate, Photoshop, 수채</span></li>
+            <li><span class="k">지역</span><span>서울 (원격 협업 가능)</span></li>
+          </ul>
+          <div>
+            <p>시각디자인을 공부하고 출판사 디자인팀에서 3년간 일한 뒤 프리랜서로 독립했습니다. 지금은 그림책과 책 표지를 중심으로 작은 브랜드의 패키지와 웹 일러스트도 함께 작업합니다.</p>
+            <p>따뜻한 색감과 부드러운 손그림 질감을 좋아합니다. 디지털로 작업하더라도 종이에 그린 듯한 느낌이 남도록 직접 만든 브러시와 수채 스캔 질감을 섞어 씁니다.</p>
+            <p>작업은 짧은 대화로 시작합니다. 담고 싶은 이야기와 쓰일 곳을 함께 정리한 뒤 러프 스케치, 색 시안, 최종본 순서로 진행하며 단계마다 의견을 반영합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="wrap">
+        <p class="section-label">WORKS</p>
+        <h2>대표 작업</h2>
+        <div class="works">
+
+          <figure class="work">
+            <svg viewBox="0 0 400 300" role="img" aria-label="밤하늘 아래 언덕 위에 앉은 아이와 고양이 그림">
+              <rect width="400" height="300" fill="#2f3a5c"/>
+              <circle cx="310" cy="70" r="34" fill="#f6e3b4"/>
+              <circle cx="80" cy="50" r="2.5" fill="#fff"/>
+              <circle cx="150" cy="90" r="2" fill="#fff"/>
+              <circle cx="220" cy="40" r="2.5" fill="#fff"/>
+              <circle cx="360" cy="140" r="2" fill="#fff"/>
+              <circle cx="40" cy="130" r="2" fill="#fff"/>
+              <path d="M0 230 Q120 170 240 210 T400 200 V300 H0 Z" fill="#4d6b5a"/>
+              <path d="M0 260 Q140 230 260 255 T400 250 V300 H0 Z" fill="#3c5547"/>
+              <circle cx="170" cy="178" r="14" fill="#f1c9a5"/>
+              <path d="M156 192 h28 l6 30 h-40 z" fill="#d9633b"/>
+              <path d="M200 206 q10 -16 20 0 q2 10 -10 12 q-12 -2 -10 -12 z" fill="#2b2724"/>
+              <path d="M203 198 l3 -8 l4 7 M217 198 l-3 -8 l-4 7" stroke="#2b2724" stroke-width="3" fill="#2b2724"/>
+            </svg>
+            <figcaption>
+              <p class="meta">그림책 | 2025</p>
+              <h3>달이 내려온 언덕</h3>
+              <p class="desc">잠 못 드는 아이와 고양이가 밤 산책을 떠나는 그림책입니다. 표지와 본문 32장을 그렸습니다.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="work">
+            <svg viewBox="0 0 400 300" role="img" aria-label="창가 책상 위의 찻잔과 펼친 책 그림">
+              <rect width="400" height="300" fill="#f3e6d3"/>
+              <rect x="230" y="30" width="130" height="150" rx="6" fill="#bcd6dc"/>
+              <path d="M295 30 v150 M230 105 h130" stroke="#f3e6d3" stroke-width="8"/>
+              <path d="M250 180 q20 -40 40 -10 q10 -30 30 0" stroke="#6f9a72" stroke-width="5" fill="none"/>
+              <rect x="0" y="200" width="400" height="100" fill="#c98f62"/>
+              <path d="M70 215 l70 -12 l70 12 v42 l-70 -12 l-70 12 z" fill="#fffaf2"/>
+              <path d="M140 203 v42" stroke="#e7e0d6" stroke-width="2"/>
+              <path d="M260 210 h44 v28 q0 14 -22 14 q-22 0 -22 -14 z" fill="#d9633b"/>
+              <path d="M304 218 q14 0 14 10 q0 10 -14 10" stroke="#d9633b" stroke-width="5" fill="none"/>
+              <path d="M274 196 q-6 -10 2 -18 M290 196 q-6 -10 2 -18" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+            <figcaption>
+              <p class="meta">책 표지 | 2024</p>
+              <h3>오후 네 시의 서재</h3>
+              <p class="desc">에세이집 표지 일러스트입니다. 조용한 오후의 빛을 창가 장면으로 표현했습니다.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="work">
+            <svg viewBox="0 0 400 300" role="img" aria-label="꽃과 잎으로 둘러싼 원형 브랜드 일러스트">
+              <rect width="400" height="300" fill="#f6e4da"/>
+              <circle cx="200" cy="150" r="92" fill="#fffaf2"/>
+              <circle cx="200" cy="150" r="92" fill="none" stroke="#d9633b" stroke-width="3"/>
+              <ellipse cx="120" cy="90" rx="26" ry="12" transform="rotate(-35 120 90)" fill="#6f9a72"/>
+              <ellipse cx="290" cy="215" rx="26" ry="12" transform="rotate(-35 290 215)" fill="#6f9a72"/>
+              <ellipse cx="300" cy="95" rx="22" ry="10" transform="rotate(30 300 95)" fill="#8fb38e"/>
+              <ellipse cx="105" cy="210" rx="22" ry="10" transform="rotate(30 105 210)" fill="#8fb38e"/>
+              <g fill="#d9633b">
+                <circle cx="200" cy="122" r="16"/>
+                <circle cx="226" cy="146" r="16"/>
+                <circle cx="216" cy="176" r="16"/>
+                <circle cx="184" cy="176" r="16"/>
+                <circle cx="174" cy="146" r="16"/>
+              </g>
+              <circle cx="200" cy="152" r="13" fill="#f6c453"/>
+            </svg>
+            <figcaption>
+              <p class="meta">브랜드 일러스트 | 2025</p>
+              <h3>들꽃 찻집 패키지</h3>
+              <p class="desc">작은 티 브랜드의 패키지와 매장 메뉴판에 들어간 꽃 일러스트 시리즈입니다.</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="section-label">CONTACT</p>
+        <h2>연락처</h2>
+        <p class="contact-intro">작업 의뢰나 협업 제안은 메일로 보내 주세요. 일정, 쓰일 곳, 원하는 분위기를 함께 적어 주시면 2일 안에 답장드립니다.</p>
+        <ul class="contacts">
+          <li>
+            <a href="mailto:hello@haneul-illust.kr">
+              <span class="k">이메일</span>
+              <span class="v">hello@haneul-illust.kr</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/haneul.draws" target="_blank" rel="noopener">
+              <span class="k">인스타그램</span>
+              <span class="v">@haneul.draws</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.behance.net/haneulkim" target="_blank" rel="noopener">
+              <span class="k">비핸스 포트폴리오</span>
+              <span class="v">behance.net/haneulkim</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 김하늘. 모든 그림의 저작권은 작가에게 있습니다.</div>
+  </footer>
+
+</body>
+</html>
